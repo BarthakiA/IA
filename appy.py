@@ -153,7 +153,7 @@ st.plotly_chart(fig16)
 # 18. Gross Income by Branch
 st.subheader("Gross Income by Branch")
 st.markdown("Explore gross income performance across branches.")
-gross_income_branch = df_filtered.groupby('Branch')['Gross income'].sum().reset_index()
+gross_income_branch = df_filtered.groupby('Branch')['gross income'].sum().reset_index()
 fig17 = px.bar(gross_income_branch, x='Branch', y='Gross income', color='Branch')
 st.plotly_chart(fig17)
 
