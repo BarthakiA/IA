@@ -90,7 +90,7 @@ st.plotly_chart(fig7)
 # 9. Gross Income vs Rating Scatter
 st.subheader("Gross Income vs Rating")
 st.markdown("Visualize the relationship between gross income and customer ratings.")
-fig8 = px.scatter(df_filtered, x='Gross income', y='Rating', color='Product line')
+fig8 = px.scatter(df_filtered, x='gross income', y='Rating', color='Product line')
 st.plotly_chart(fig8)
 
 # 10. Sales Over Time
