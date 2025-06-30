@@ -87,8 +87,8 @@ sales_data = df_filtered.groupby('Product line')['Total'].sum().reset_index()
 fig7 = px.pie(sales_data, values='Total', names='Product line')
 st.plotly_chart(fig7)
 
-# 9. Gross Income vs Rating Scatter
-st.subheader("Gross Income vs Rating")
+# 9. gross Income vs Rating Scatter
+st.subheader("gross Income vs Rating")
 st.markdown("Visualize the relationship between gross income and customer ratings.")
 fig8 = px.scatter(df_filtered, x='gross income', y='Rating', color='Product line')
 st.plotly_chart(fig8)
@@ -150,11 +150,11 @@ branch_sales = df_filtered.groupby('Branch')['Total'].sum().reset_index()
 fig16 = px.bar(branch_sales, x='Branch', y='Total', color='Branch')
 st.plotly_chart(fig16)
 
-# 18. Gross Income by Branch
-st.subheader("Gross Income by Branch")
+# 18. gross Income by Branch
+st.subheader("gross Income by Branch")
 st.markdown("Explore gross income performance across branches.")
 gross_income_branch = df_filtered.groupby('Branch')['gross income'].sum().reset_index()
-fig17 = px.bar(gross_income_branch, x='Branch', y='Gross income', color='Branch')
+fig17 = px.bar(gross_income_branch, x='Branch', y='gross income', color='Branch')
 st.plotly_chart(fig17)
 
 # 19. Correlation Heatmap
