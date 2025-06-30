@@ -157,18 +157,11 @@ gross_income_branch = df_filtered.groupby('Branch')['gross income'].sum().reset_
 fig17 = px.bar(gross_income_branch, x='Branch', y='gross income', color='Branch')
 st.plotly_chart(fig17)
 
-# 19. Correlation Heatmap
-st.subheader("Correlation Heatmap")
-st.markdown("See relationships among numerical variables.")
-fig18, ax18 = plt.subplots()
-sns.heatmap(df_filtered.select_dtypes('number').corr(), annot=True, cmap='coolwarm', ax=ax18)
-st.pyplot(fig18)
-
-# 20. Ratings vs Total Sales by Branch
+# 19. Ratings vs Total Sales by Branch
 st.subheader("Ratings vs Total Sales by Branch")
 st.markdown("Scatterplot comparing branch sales with average customer ratings.")
 branch_data = df_filtered.groupby('Branch').agg({'Total':'sum', 'Rating':'mean'}).reset_index()
-fig19 = px.scatter(branch_data, x='Total', y='Rating', color='Branch', size='Total')
+fig18 = px.scatter(branch_data, x='Total', y='Rating', color='Branch', size='Total')
 st.plotly_chart(fig19)
 
 # Footer
